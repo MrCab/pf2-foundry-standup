@@ -28,4 +28,10 @@ sudo apt-get install unzip
 unzip foundryvtt.zip
 
 # This actually runs node fro mthe current directory
-node resources/app/main.js --dataPath=$HOME/foundrydata
+# node resources/app/main.js --dataPath=$HOME/foundrydata
+
+# Setup the service
+sudo cp foundry.service /etc/systemd/system/foundry.service
+sudo systemctl daemon-reload
+sudo systemctl enable foundry
+sudo systemctl start foundry
