@@ -5,7 +5,7 @@ Description=Foundry VTT
 Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu/foundryvtt/
-ExecStart=node /home/ubuntu/foundryvtt/resources/app/main.js --dataPath=/home/ubuntu/foundrydata
+ExecStart=node /home/ubuntu/foundryvtt/main.js --dataPath=/home/ubuntu/foundrydata
 Restart=always
 
 [Install]
