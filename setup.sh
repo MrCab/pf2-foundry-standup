@@ -20,10 +20,20 @@ sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 
 NODE_MAJOR=20
-# Could be NODE_MAJOR=21
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+# Could be NODE_MAJOR=21 or 22. 20 was the original install probably
+
+# this command is old and busted as of Ubuntu 24
+#echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+
+curl -fsSL https://deb.nodesource.com/setup_${NODE_MAJOR}.x | sudo -E bash -
 
 sudo apt install -y nodejs
+
+##########
+# This was all written before we added haproxy and lets encrypt
+sudo apt install haproxy
+
+###########
 
 # When you buy your foundry license, you will be able to download a few types of files.
 # This step refers to going to your foundry account and getting a temp URL to download that zip file
