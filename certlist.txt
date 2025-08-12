@@ -1,0 +1,2 @@
+/etc/haproxy/files/certs/foundry_fullchain.pem
+/etc/haproxy/files/certs/goodboyrush_com.pem goodboyrush.com
